@@ -9,18 +9,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <style>
     .gradient-bar {
-  height: 50px;
-  background: linear-gradient(to bottom, #e5e5e5, transparent);
-  
-}
+      height: 50px;
+      background: linear-gradient(to bottom, #e5e5e5, transparent);
+    }
 
     .logo-strip {
       overflow: hidden;
       white-space: nowrap;
       position: fixed;
       display: inline;
-      
-     
     }
 
     .logo-track {
@@ -34,61 +31,35 @@
     }
 
     @keyframes scroll-left {
-    
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-   
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
-    
-  .carousel-item img {
+
+    .carousel-item img {
       max-width: 100%;
       height: 150px;
       object-fit: cover;
     }
+
     .image-group {
       display: flex;
       justify-content: space-between;
       flex-wrap: nowrap;
       text-align: center;
     }
+
     .image-group > div {
-      width: 14.28%; /* 100% / 7 */
+      width: 14.28%;
     }
+
     .caption {
       font-size: 14px;
       margin-top: 5px;
     }
-.section-heading {
-      position: relative;
-      display: inline-block;
-    }
 
-    .bg-text {
-      font-size: 100px;
-      font-weight: 700;
-      color: #d3dce6; /* light gray/blue */
-      opacity: 0.2;
-      position: absolute;
-      top: -40px;
-      left: 0;
-      white-space: nowrap;
-      z-index: 0;
-    }
-
-    .fg-text {
-      font-size: 32px;
-      font-weight: 700;
-      color: #212529;
-      position: relative;
-      z-index: 1;
-    }
     .testimonial-section {
       position: relative;
-      padding-right: 180px; /* Leave space for the image */
+      padding-right: 180px;
     }
 
     .fixed-image {
@@ -101,115 +72,94 @@
 
     @media (max-width: 768px) {
       .fixed-image {
-        display: none; /* Hide image on smaller screens if needed */
+        display: none;
       }
+
       .testimonial-section {
         padding-right: 0;
       }
     }
-</style>
+  </style>
 </head>
 <body>
-    
-<nav class="navbar navbar-expand-lg navbar-light bg-default">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-  
-       <i class="bi bi-grid-3x3-gap-fill" style="font-size: 2rem; border-bottom: 5px;"></i>
-      <img src="New_crystalcodelabs_logo_CMYKsd-e1692779202450.png" alt="Logo" width="200" height="100">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">
+      <img src="New_crystalcodelabs_logo_CMYKsd-e1692779202450.png" alt="Logo" width="180">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary ms-2" href="#">Request Quote</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-    <!-- Navigation items -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto "> <!-- ms-auto pushes items to right -->
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/" >Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/about-us" >About Us</a>
-        </li>
-        <li class="nav-item droupdown">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/service" >service</a>    
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/project">project</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/blog" >Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/team" >Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/Gallery" >Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/contact-us" >Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/contact-us/">
-            <button class="btn btn-primary mt-50">Request Quote</button>
-          </a>
-        </li>
-      </ul>
-    </div>                    
-<div class="gradient-bar">
-  <div class="container mt-5">
+<!-- Hero Section -->
+<div class="container py-5">
   <div class="row align-items-center">
     <div class="col-md-6">
-  <h4 class="text-left mb-3">DEVELOPMENT <br> IS OUR <br> ULTIMATE GOAL</h4>
-  <p class="text-left mb-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo.<br>
-    Ipsum, dolor sit amet consectetur adipisicing elit. Quae sint velit sapiente fugit,
-    id veniam vitae deserunt velit accusamus!
-  </p>
-    <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/contact-us/"><button class="btn btn-primary mt-50">Request Quote</button>
-</div>
-<div class="col-md-6">
-  <img src="Screenshot 2025-06-03 103230.png" alt="Top Image" width="400px" height="400" class="float-right m-5">
-</div>
-  </div>
-  </div>
-</div>
-
-  <div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-<h2 class="text-center" style="padding: 5px;">
-  THE BEST <span class="text-decoration-underline">SERVICES</span><br> CCL PROVIDES
-</h2>
-
+      <h2>DEVELOPMENT <br> IS OUR <br> ULTIMATE GOAL</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo.<br>
+        Ipsum, dolor sit amet consectetur adipisicing elit. Quae sint velit sapiente fugit.
+      </p>
+      <a href="#" class="btn btn-primary mt-3">Request Quote</a>
     </div>
-<div class="row text-center">
- <div class="col-md-4">
+    <div class="col-md-6 text-center">
+      <img src="Screenshot 2025-06-03 103230.png" alt="Top Image" class="img-fluid" style="max-width: 400px;">
+    </div>
+  </div>
+</div>
+
+<!-- Services Section -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">THE BEST <span class="text-decoration-underline">SERVICES</span> CCL PROVIDES</h2>
+  <div class="row text-center">
+    <div class="col-md-4">
       <img src="Screenshot 2025-06-03 161249.png" alt="Logo 1" class="img-fluid mb-3">
-      <h4>MOBILE AND WEB DEVELOPMENT</h4><br>
+      <h4>MOBILE AND WEB DEVELOPMENT</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
-<div class="col-md-4">
+    <div class="col-md-4">
       <img src="Screenshot 2025-06-03 161259.png" alt="Logo 2" class="img-fluid mb-3">
-      <h4>DEVOPS</h4><br>
+      <h4>DEVOPS</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-     </div>
-    
-     <div class="col-md-4">
-      <img src="Screenshot 2025-06-03 161308.png" alt="Logo 3"  class="img-fluid mb-3">
-      <h4>CORPORATE TRAINING</h4><br>
+    </div>
+    <div class="col-md-4">
+      <img src="Screenshot 2025-06-03 161308.png" alt="Logo 3" class="img-fluid mb-3">
+      <h4>CORPORATE TRAINING</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-     </div>
     </div>
-<div class="row mt-4">
-     <div class="col-12 text-center">
-      <img src="Screenshot 2025-06-03 165841.png" alt="Business" width="1500" height="600">
-    </div>
+  </div>
+</div>
+
+<!-- Projects Image Banner -->
+<div class="container mt-5 text-center">
+  <img src="Screenshot 2025-06-03 165841.png" alt="Business" class="img-fluid" style="width: 100%; height: auto;">
+</div>
+
 </div>
 </div>
     <br>
+    //third
     <div class="container mt-5">
     <h4 class="text-center">
       Affrodable<u> it Solutions</u> for<br> your Business</h4>
@@ -217,7 +167,8 @@
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, vel.
       </p>
       <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/about-us/"><button class="btn btn-primary mt-50">Explore More</button>
+          <a class="nav-link" href="https://www.crystalcodelabs.com/about-us/">
+            <button class="btn btn-primary mt-50">Explore More</button>
           </a>
       </li>
     </div>
@@ -230,7 +181,7 @@
       <img src="https://cdn.simpleicons.org/google"alt="google logo"height="50">
     </div>
   </div>
-
+//five
       <div class="container mt-5">
         <div class="row align-item-start">
           <div class="col-md-9">
@@ -282,11 +233,8 @@
       </div>
       
 <div class="col-md-3 text-end">
-        <img src="Screenshot 2025-06-09 180510.png" alt="Top Image" class="img-fluid m-3" style="width: 800%; height: 100%;">
-      </div>
-        </div>
-      </div>
-      
+  <img src="Screenshot 2025-06-09 180510.png" alt="Top Image" class="img-fluid m-3" style="max-width: 100%; height: auto;">
+</div>
     
        <div class="container mt-5">
 <h2 class="text-center">What We Do<br>
@@ -472,10 +420,8 @@ for your Success</h2>
 <div class="carousel-indicators mt-3">
   <button type="button" data-bs-slide-to="0" ...></button>
   <br>
-  <div class="container">
-<h2 class="text-center">Read Our Last News.<br>Be In Trend
-</h2>
-
+</div>
+<h6>hello</h6>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
