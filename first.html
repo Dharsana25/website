@@ -12,29 +12,27 @@
       height: 50px;
       background: linear-gradient(to bottom, #e5e5e5, transparent);
     }
-
-    .logo-strip {
+.logo-slider {
       overflow: hidden;
       white-space: nowrap;
-      position: fixed;
-      display: inline;
+      position: relative;
     }
 
     .logo-track {
       display: inline-block;
-      animation: scroll-left 20s linear infinite;
+      animation: scroll 20s linear infinite;
     }
 
-    .logo-img {
-      height: 80px;
-      margin: 0 2rem;
+    .logo-track img {
+      height: 50px;
+      margin: 0 30px;
     }
 
-    @keyframes scroll-left {
+    @keyframes scroll {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
-
+    
     .carousel-item img {
       max-width: 100%;
       height: 150px;
@@ -66,8 +64,8 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 160px;
-      height: auto;
+      width: 700px;
+      height: 600px;
     }
 
     @media (max-width: 768px) {
@@ -78,7 +76,110 @@
       .testimonial-section {
         padding-right: 0;
       }
+  .custom-underline {
+    text-decoration: underline;
+    text-decoration-color: blue; /* Green or any other color */
+    text-decoration-thickness: 3px;
+  }
+
+
+.carousel-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    animation: scroll-horizontal 60s linear infinite;
+    gap: 30px;
+  }
+
+  .carousel-track > div {
+    flex: 0 0 250px;
+    text-align: center;
+  }
+
+  .carousel-track img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  @keyframes scroll-horizontal {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-track > div {
+      width: 80%;
     }
+  }
+  /* Hover color for nav link text */
+.nav-link-wrapper:hover .nav-link {
+  color: #007bff; /* Bootstrap primary blue */
+}
+
+/* Hover underline effect */
+.nav-link-wrapper:hover .nav-link-line {
+  background-color: #007bff; /* Bootstrap primary blue */
+}
+
+/* Ensure underline line is visible with height */
+.nav-link-line {
+  width: 100%;
+  height: 3px;
+  margin-top: 5px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+.nav-link-wrapper.active .nav-link {
+  color: #007bff;
+}
+
+.nav-link-wrapper.active .nav-link-line {
+  background-color: #007bff;
+}
+.image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-text {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    
+  }
+
+
   </style>
 </head>
 <body>
@@ -95,17 +196,45 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Project</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Team</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item nav-link-wrapper active">
+          <a class="nav-link fw-bold" style="font-size:medium;" href="https://www.crystalcodelabs.com/Home/">HOME</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;"href="https://www.crystalcodelabs.com/about-us/">ABOUT US</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/Service/">SERVICE</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/project/">PROJECT</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/Blog/">BLOG</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/team/">TEAM</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/Gallery/">GALLERY</a>
+          <div class="nav-link-line"></div>
+        </li>
+        <li class="nav-item nav-link-wrapper">
+          <a class="nav-link fw-bold"  style="font-size:medium;" href="https://www.crystalcodelabs.com/contact-us/">CONTACT US</a>
+          <div class="nav-link-line"></div>
+        </li>
+
+        <!-- Request Quote Button (outside underline style) -->
         <li class="nav-item">
-          <a class="btn btn-primary ms-2" href="#">Request Quote</a>
+          <a class="btn btn-primary ms-2" style="font-size: small;" href="https://www.crystalcodelabs.com/contact-us/">
+            REQUEST QUOTE
+          </a>
         </li>
       </ul>
     </div>
@@ -116,14 +245,14 @@
 <div class="container py-5">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <h2>DEVELOPMENT <br> IS OUR <br> ULTIMATE GOAL</h2>
+      <h2 class="fw-bold " style="font-size: xx-large;">DEVELOPMENT  IS OUR <br> ULTIMATE GOAL</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, explicabo.<br>
         Ipsum, dolor sit amet consectetur adipisicing elit. Quae sint velit sapiente fugit.
       </p>
-      <a href="#" class="btn btn-primary mt-3">Request Quote</a>
+      <a href="https://www.crystalcodelabs.com/contact-us/"class="btn btn-primary mt-3">REQUEST QUOTE</a>
     </div>
-    <div class="col-md-6 text-center">
+    <div class="col-md-6 text-center fw-bold">
       <img src="Screenshot 2025-06-03 103230.png" alt="Top Image" class="img-fluid" style="max-width: 400px;">
     </div>
   </div>
@@ -131,22 +260,24 @@
 
 <!-- Services Section -->
 <div class="container mt-5">
-  <h2 class="text-center mb-4">THE BEST <span class="text-decoration-underline">SERVICES</span> CCL PROVIDES</h2>
+   <h4 class="text-center mb-4 fw-bold " style="font-size: xx-large;"> THE BEST  <span class="custom-underline ">SERVICES</span><br> CCL PROVIDES EVER
+  <br>
   <div class="row text-center">
-    <div class="col-md-4">
-      <img src="Screenshot 2025-06-03 161249.png" alt="Logo 1" class="img-fluid mb-3">
-      <h4>MOBILE AND WEB DEVELOPMENT</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="col-md-4 p-4 " style="font-size: medium;">
+      <img src="wr.png" alt="Logo 1" class="img-fluid mb-3">
+      <br>
+      <h4 style="font-size: large;">MOBILE AND WEB DEVELOPMENT</h4>
+      <p class="text-secondary">Crafting seamless digital experiences:<br> Expert in mobile and web development, turning <br>innovative ideas into user-friendly,<br> responsive applications.</p>
     </div>
-    <div class="col-md-4">
-      <img src="Screenshot 2025-06-03 161259.png" alt="Logo 2" class="img-fluid mb-3">
-      <h4>DEVOPS</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="col-md-4 p-4" style="font-size: medium;">
+      <img src="wr2.png" alt="Logo 2" class="img-fluid mb-3">
+      <h4 style="font-size: large;">DEVOPS</h4>
+      <p class="text-secondary">Streamline your software development and IT operations with our DevOps service,<br> combining agile methodologies and<br> automation to accelerate delivery and <br> enhance collaboration..</p>
     </div>
-    <div class="col-md-4">
-      <img src="Screenshot 2025-06-03 161308.png" alt="Logo 3" class="img-fluid mb-3">
-      <h4>CORPORATE TRAINING</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="col-md-4 p-4" style="font-size: medium;">
+      <img src="wr3.png" alt="Logo 3" class="img-fluid mb-3">
+      <h4 style="font-size: large;">CORPORATE TRAINING</h4>
+      <p class="text-secondary">Enhance workforce potential and <br> productivity through tailored corporate <br>trainings that empower teams with cutting- <br>edge skills and strategic insights for <br>sustained success..</p>
     </div>
   </div>
 </div>
@@ -158,39 +289,58 @@
 
 </div>
 </div>
-    <br>
-    //third
-    <div class="container mt-5">
-    <h4 class="text-center">
-      Affrodable<u> it Solutions</u> for<br> your Business</h4>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam a iusto numquam consequuntur minus vitae optio doloremque dolore saepe aut!</p><br>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, vel.
-      </p>
-      <li class="nav-item">
-          <a class="nav-link" href="https://www.crystalcodelabs.com/about-us/">
-            <button class="btn btn-primary mt-50">Explore More</button>
-          </a>
-      </li>
+    <div class="container my-5 py-5">
+  <div class="row align-items-center">
+    
+    <div class="col-md-6 text-start">
+      <img src="Screenshot 2025-06-03 173454.png" alt="CCL Image" class="img-fluid" style="max-width: 100%;">
     </div>
-<div class="container py-5">
-
-      <img src="https://cdn.simpleicons.org/flipkart"alt="flipkart logo"height="50">
-      <img src="https://cdn.simpleicons.org/canva"alt="canva logo"height="50">
-      <img src="https://cdn.simpleicons.org/duolingo"alt="duolingo logo"height="50">
       
-      <img src="https://cdn.simpleicons.org/google"alt="google logo"height="50">
+    <div class="col-md-5 my-5 py-5 m-5 px-5 text-start">
+      <h6 class="fw-bold" style="font-size: xx-large;">
+  Affordable <span class="text-decoration-underline">IT Solutions</span> for<br> Your Business
+      </h6>
+<br>
+      <p class="fw-bold">In CCL, we have a dynamic team of Polyglot developers with distinct knowledge in SOLID principles, following the Test Driven Development for quality product.</p>
+
+      <p>If you’re seeking for a reliable business to create your operational software or upgrade your systems.</p>
+     <div class="container py-4">
+  <div class="d-flex justify-content-start">
+    <a href="https://www.crystalcodelabs.com/contact-us/">
+    <button class="btn btn-success">Explore More</button>
+    </a>
+  </div>
+     </div>
     </div>
   </div>
-//five
+    </div>
+<div class="container py-5">
+<div class="logo-slider">
+  <div class="logo-track">
+  
+      <img src="ubona-logo-1.png"alt="ubona logo"height="50">
+      <img src="2.png"alt="flipkart logo"height="50">
+      <img src="3.png"alt="adani logo"height="50">
+      <img src="4.png"alt="ubona logo"height="50">
+      <img src="5.png"alt="flipkart logo"height="50">
+      <img src="6.png"alt="ubona logo"height="50">
+      <img src="7.png"alt="flipkart logo"height="50">
+      <img src="8.png"alt="flipkart logo"height="50">
+      <img src="varuvi-logo.png"alt="flipkart logo"height="50">
+  </div>
+</div>
+</div>
+
+<!--five-->
       <div class="container mt-5">
-        <div class="row align-item-start">
-          <div class="col-md-9">
-            <div class="box bg-primary text-white p-4 rounded" style="height: 400px; width: 600px; align-self: start; margin-left: 10px;">
+        <div class="row text-center">
+          <div class="col-md-6 mt-3">
+            <div class="box bg-primary text-white p-4 rounded" style="height: 500px; width: 700px; align-self: start; margin-left: 10px;">
               <h6>IT Development from<br>Conception to Delivery</h6>
             <br>
  <!-- First Dropdown -->
-<div class="dropdown mb-3" >
-  <a class="btn btn-info dropdown-toggle box justify-content-left " href="#" role="button" style="width: 500px;" id="dropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="dropdown my-3 " >
+  <a class="btn btn-info dropdown-toggle box  " href="#" role="button" style="width: 600px;" id="dropdown1" data-bs-toggle="dropdown" aria-expanded="false">
     Bespoke Product Development
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown1">
@@ -203,8 +353,8 @@
 </div>
 
 <!-- Second Dropdown -->
-<div class="dropdown mb-3">
-  <a class="btn btn-info dropdown-toggle justify-content-left" href="#" role="button" style="width: 500px;" id="dropdown2" data-bs-toggle="dropdown" aria-expanded="false" >
+<div class="dropdown my-3">
+  <a class="btn btn-info dropdown-toggle justify-content-left" href="#" role="button" style="width: 600px;" id="dropdown2" data-bs-toggle="dropdown" aria-expanded="false" >
     Bespoke Mobile & Web Apps
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown2">
@@ -217,8 +367,8 @@
 </div>
 
 <!-- Third Dropdown -->
-<div class="dropdown mb-3">
-  <a class="btn btn-info dropdown-toggle" href="#" role="button" style="width: 500px;" id="dropdown3" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="dropdown my-3">
+  <a class="btn btn-info dropdown-toggle " href="#" role="button" style="width: 600px;" id="dropdown3" data-bs-toggle="dropdown" aria-expanded="false">
     Enterprise & Corporate Training
   </a>
   <ul class="dropdown-menu" aria-labelledby="dropdown3">
@@ -232,13 +382,13 @@
         </div>
       </div>
       
-<div class="col-md-3 text-end">
-  <img src="Screenshot 2025-06-09 180510.png" alt="Top Image" class="img-fluid m-3" style="max-width: 100%; height: auto;">
+<div class="col-md-6 text-center margin-top">
+  <img src="Screenshot 2025-06-09 180510.png" alt="Top Image" class="img-fluid m-3" style="width: 900px; height:400px;">
 </div>
     
        <div class="container mt-5">
-<h2 class="text-center">What We Do<br>
-for your Success</h2>
+<h2 class="text-center fw-bold" style="font-size: xx-large;">What We Do<br>
+for your<span class="text-decoration-underline">Success</span> </h2>
 <div class="container mt-5">
  <div class="row  g-3">
     <div class="col-md-3">
@@ -246,7 +396,7 @@ for your Success</h2>
 <h1 style="color:blue;">01</h1>
 <p style="color: blue;">Business Processes Optimization</p>
 <p>ntium quisquam  esse perferendis provident? Sit, consequuntur reprehenderit?</p>
-<h1 class="text-primary">01</h1>
+<h1 class="text-primary text-end">01</h1>
       </div>
     </div>
           
@@ -256,7 +406,7 @@ for your Success</h2>
 <h1 style="color: blue;">02</h1>
 <p style="color: blue;">Industry Standards Compliance</p>
 <p>ntium quisquam  esse perferendis provident? Sit, consequuntur reprehenderit?</p>
-<h1 class="text-primary">02</h1>
+<h1 class="text-primary text-end">02</h1>
       </div>
   </div>
 
@@ -266,7 +416,7 @@ for your Success</h2>
 <h1 style="color:blue;">03</h1>
 <p style="color:blue;">Software Support & Maintenance</p>
 <p>ntium quisquam  esse perferendis provident? Sit, consequuntur reprehenderit?</p>
-<h1 class="text-primary">03</h1>
+<h1 class="text-primary text-end">03</h1>
 </div>
 </div>
 
@@ -276,7 +426,7 @@ for your Success</h2>
 <h1 style="color: blue;">04</h1>
 <p style="color: blue;">Custom Software Solutions</p>
 <p>ntium quisquam  esse perferendis provident? Sit, consequuntur reprehenderit?</p>
-<h1 class="text-primary fw-bold align-items-end">04</h1> 
+<h1 class="text-primary text-end">04</h1> 
       </div>
 </div>
  </div>
@@ -285,8 +435,8 @@ for your Success</h2>
         </div>
       </div>
   <br>
-  <div class="container">
-<h2 class="text-center">We Created CCL<br>creative project
+<div class="container">More actions
+<h2 class="text-center fw-bold" style="font-size: xx-large;">We Created CCL<br>creative project
 </h2>
 <br>
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -294,7 +444,7 @@ for your Success</h2>
       <div class="carousel-item active">
         <div class="image-group">
           <div>
-          
+
       <img  src="pic1.png" class="img-fluid" alt="Logo 1" >
       <h4>Louico</h4><br>
       <p>Developmenet.</p><br>
@@ -317,51 +467,51 @@ for your Success</h2>
      <br>
   <div>
       <img  src="pic4.png" class="img-fluid" alt="Logo 1" >
-     
+
       <h4>Fresa Technologies</h4><br>
       <p>TECHNOLOGY.</p><br>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur, culpa.</p>
     </div>
     <br>
   <div>
-         
+
       <img src="pic5.png" class="img-fluid" alt="Logo 2" >
-      
+
       <h4>tamilpokkishim</h4><br>
       <p>TECHNOLOGY</p>
-      
+
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sunt!</p>
      </div>
      <br>
 <div>
-     
+
       <img src="pic6.png" class="img-fluid" alt="Logo 3" >
-      
+
       <h4>ubona</h4><br>
       <p>TECHNOLOGY</p>
-    
+
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
      </div>
      <br>
 <div>
       <img  src="pic7.png" class="img-fluid" alt="Logo 4" >
-     
+
       <h4>Emversity</h4><br>
       <p>TECHNOLOGY</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-     </div>
+</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-  </div>
-  </div>
   <br>
-  <div class="container mt-5 testimonial-section">
+  <div class="container py-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
   <h2 class="fw-bold py-3">What Our Client’s <span class="highlight">Say about CCL</span></h2>
 
-  <!-- Fixed Image on the top-right -->
-  <img src="Untitled.png" alt="Top Image" style="width: 700px;height: 600px;" class="fixed-image">
-
+  
   <!-- Carousel -->
   <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel"> 
     <div class="carousel-inner">
@@ -369,10 +519,10 @@ for your Success</h2>
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="text-start">
-          <p class="mt-4 py-3">
+          <p class="mt-3">
             Working with <strong>CCL</strong> has been an exceptional experience.<br>Their team's proficiency in crafting tailored solutions, seamless communication,<br> and timely project delivery has elevated our business to new heights.<br> Trust <strong>CCL</strong> for innovative and reliable software solutions.
           </p>
-          <h5 class="fw-bold">Anna Colins</h5>
+          <h5 class="fw-bold mt-4">Anna Colins</h5>
           <p class="text-primary">VIVRITI CAPITALS LENS</p>
         </div>
       </div>
@@ -397,31 +547,76 @@ for your Success</h2>
           <h5 class="fw-bold">Meena Rajan</h5>
           <p class="text-primary">FUTUREGEN AI</p>
         </div>
+          <div class="mt-4">
+        <button type="button" class="btn btn-outline-dark rounded-circle me-2" style="width: 5px; height: 4px;"></button>
+        <button type="button" class="btn btn-outline-dark rounded-circle me-2" style="width: 5px; height: 5px;"></button>
+        <button type="button" class="btn btn-outline-dark rounded-circle" style="width: 5px; height: 5px;"></button>
+          </div>
       </div>
-
-    </div>
-
-    <!-- Carousel Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-
-    <!-- Carousel Indicators -->
-    <div class="carousel-indicators mt-3">
-      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      <div class="col-md-6 text-end">
+  <img src="ls.png" alt="Top Image" style="max-width: 100%; height: auto;" class="fixed-image">
+</div>
     </div>
   </div>
-</div>
-<div class="carousel-indicators mt-3">
-  <button type="button" data-bs-slide-to="0" ...></button>
+    </div>
+  </div>
+  </div>
   <br>
-</div>
-<h6>hello</h6>
+<div class="container ">
+<h2 class="text-center fw-bold" style="font-size: xx-large;">Read Our Last News.<br> Be In Trend
+   <div class="row text-center">
+    <div class="col-md-4 p-4  " style="font-size: medium;">
+      <img src="ui.jpg" alt="Logo 1" class="img-fluid mb-3">
+      <br>
+      <h2 style="font-size: x-small; color:slategrey;">By crystalcodelabs</h2>
+      <br>
+      <h4 style="font-size: x-large;"> 
+        <a href="https://www.crystalcodelabs.com/Blog/" style="text-decoration: none; color: inherit;">Crafting Seamless User <br> Experience</h4><br>
+        <h2 class="text-start" style="font-size: medium; color: blue;text-decoration: underline;">
+          Read More
+        </h2></a>
+    </div>
+    <div class="col-md-4 p-4" style="font-size: medium;">
+      <img src="tr.jpg" alt="Logo 2" class="img-fluid mb-3">
+      <br>
+      <h2 style="font-size: x-small; color:slategrey;">By crystalcodelabs</h2>
+      <br>
+    <h4 style="font-size: x-large;">
+  <a href="https://www.crystalcodelabs.com/Blog/" style="text-decoration: none; color: inherit;">
+    Empowering Success: The <br> Strategic Impact Of Corporate Training
+    <h1 class="text-start" style="font-size: medium; color: blue;text-decoration: underline;">Read More</h1>
+  </a>
+</h4>
+
+     
+    </div>
+    <div class="col-md-4 p-4" style="font-size: medium;">
+      <img src="de.jpg" alt="Logo 3" class="img-fluid mb-3">
+      <br>
+      <h2 style="font-size: x-small; color:slategrey;">By crystalcodelabs</h2>
+      <br>
+      <h4 style="font-size: x-large;"> <a href="https://www.crystalcodelabs.com/Blog/"style="text-decoration: none; color: inherit;"></a>Unlocking Efficiency And <br> Collaboration:The Power Of <br>
+      Devops</h4></a>
+       <h1 class="text-start" style="font-size: medium; color: blue;text-decoration: underline;">Read More</h1>
+     <button style="background-color: blue; color: white;">Explore More</button>
+    </div>
+  </div>
+</div> 
+<script>
+  const wrappers = document.querySelectorAll('.nav-link-wrapper');
+
+  wrappers.forEach(wrapper => {
+    wrapper.addEventListener('click', function () {
+      wrappers.forEach(w => w.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+
+  
+
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
